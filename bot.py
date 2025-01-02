@@ -45,7 +45,7 @@ async def on_message(message):
 	# CHECKS IF THE MESSAGE THAT WAS SENT IS EQUAL TO "HELLO".
 	if bot.user.mentioned_in(message):
 		msg_content = message.clean_content.replace("@Meshtastic Publisher", "").strip()
-		msg = "Sent via Discord: \"" + msg_content + "\""
+		msg = f"{message.author.display_name}@Discord: \"" + msg_content + "\""
 
 		try:
 			iface = meshtastic.tcp_interface.TCPInterface(hostname=node_ip)
